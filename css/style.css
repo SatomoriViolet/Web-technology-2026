@@ -1,0 +1,190 @@
+/* Базовые настройки страницы */
+body {
+    background-color: #121011; /* Очень темный, почти черный фон */
+    color: #e0d5c1; /* Цвет старого пергамента для текста */
+    font-family: "Georgia", serif; /* Классический шрифт с засечками для атмосферы фэнтези */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-image: radial-gradient(circle, #1a1718 0%, #0a090a 100%);
+}
+
+/* Шапка сайта */
+header {
+    background-color: #000000;
+    border-bottom: 2px solid #b79043; /* Золотая линия */
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(183, 144, 67, 0.2);
+}
+
+h1 {
+    color: #b79043; /* Приглушенное золото */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+/* Навигация (меню) */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    color: #e0d5c1;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 5px 15px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+/* Эффект при наведении на кнопки меню (кроваво-красный акцент) */
+nav a:hover {
+    color: #b79043;
+    border: 1px solid #8b0000; 
+    background-color: rgba(139, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+/* Основной контент */
+main {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Стилизация секций ("панелей" квестов) */
+.panel {
+    background-color: #1a1718;
+    border: 1px solid #332b26;
+    border-left: 4px solid #8b0000; /* Темно-красная акцентная полоса слева */
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    border-radius: 2px;
+}
+
+h2 {
+    color: #b79043;
+    border-bottom: 1px solid #332b26;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+/* Блок "Про мене" (досье) */
+.character-info {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+/* Настройки твоей аватарки */
+.avatar {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 3px solid #b79043; /* Золотая рамка */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(183, 144, 67, 0.3);
+}
+
+/* Списки заданий (квесты) */
+ul {
+    list-style-type: square;
+    color: #b79043;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+ul li a {
+    color: #e0d5c1;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+ul li a:hover {
+    color: #8b0000; /* Ссылки становятся красными при наведении */
+    text-decoration: underline;
+}
+
+/* Футер */
+footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #332b26;
+    font-size: 0.9em;
+    color: #7a7062;
+    margin-top: 50px;
+}
+
+footer a {
+    color: #b79043;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #e0d5c1;
+}
+
+
+
+/* =========================================
+   СТИЛІ ДЛЯ ТАБЛИЦІ (СТРУКТУРА ДУІКТ + RPG)
+   ========================================= */
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    color: #e0d5c1;
+    font-family: "Georgia", serif;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+    font-size: 0.9em; /* Трохи зменшив шрифт, бо колонок багато */
+}
+
+/* Рамки та вирівнювання по центру (як на сайті) */
+.schedule-table th, .schedule-table td {
+    border: 1px solid #332b26;
+    padding: 8px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Шапка таблиці (заголовки колонок) */
+.schedule-table th {
+    background-color: #8b0000;
+    color: #b79043;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 2px solid #b79043;
+}
+
+/* Виділення колонки з днями тижня (зліва) */
+.day-col {
+    background-color: rgba(139, 0, 0, 0.15);
+    color: #b79043;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Ефект при наведенні мишки */
+.schedule-table tr:hover td {
+    background-color: rgba(183, 144, 67, 0.1);
+    cursor: default;
+}
+
+/* Стилі для тексту всередині клітинок */
+.subj { font-weight: bold; color: #e0d5c1; margin-bottom: 3px; }
+.room { color: #b79043; font-size: 0.85em; margin-bottom: 3px; }
+.teach { font-style: italic; color: #a39581; font-size: 0.85em; }
+.empty { color: #332b26; font-size: 1.5em; } /* Для порожніх пар */
