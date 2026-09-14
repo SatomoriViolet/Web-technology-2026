@@ -184,4 +184,58 @@ footer a:hover {
 .subj { font-weight: bold; color: #e0d5c1; margin-bottom: 3px; }
 .room { color: #b79043; font-size: 0.85em; margin-bottom: 3px; }
 .teach { font-style: italic; color: #a39581; font-size: 0.85em; }
-.empty { color: #332b26; font-size: 1.5em; } /* Для порожніх пар */
+.empty { color: #332b26; font-size: 1.5em; } /* для порожніх пар */
+
+
+
+/*стилі для форм Лб1 */
+.rpg-form .form-group {
+    margin-bottom: 20px;
+}
+
+.rpg-form label {
+    display: block;
+    color: #b79043;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.rpg-form input[type="text"],
+.rpg-form input[type="email"],
+.rpg-form input[type="password"],
+.rpg-form input[type="date"],
+.rpg-form select {
+    width: 100%;
+    padding: 10px;
+    background-color: #121011;
+    border: 1px solid #332b26;
+    color: #e0d5c1;
+    font-family: "Georgia", serif;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* підсвічування при введенні тексту */
+.rpg-form input:focus, .rpg-form select:focus {
+    outline: none;
+    border-color: #8b0000;
+    box-shadow: 0 0 8px rgba(139, 0, 0, 0.6);
+}
+
+/* кнопка відправки */
+.rpg-form input[type="submit"] {
+    background-color: #8b0000;
+    color: #b79043;
+    border: 2px solid #b79043;
+    padding: 10px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: "Georgia", serif;
+    transition: all 0.3s ease;
+}
+
+.rpg-form input[type="submit"]:hover {
+    background-color: #b79043;
+    color: #121011;
+}
