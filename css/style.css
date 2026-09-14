@@ -1,4 +1,4 @@
-/* Базовые настройки страницы */
+/* Базові налаштування */
 body {
     background-color: #121011; /* Очень темный, почти черный фон */
     color: #e0d5c1; /* Цвет старого пергамента для текста */
@@ -9,7 +9,7 @@ body {
     background-image: radial-gradient(circle, #1a1718 0%, #0a090a 100%);
 }
 
-/* Шапка сайта */
+/* головне для сайту */
 header {
     background-color: #000000;
     border-bottom: 2px solid #b79043; /* Золотая линия */
@@ -26,7 +26,7 @@ h1 {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
 }
 
-/* Навигация (меню) */
+/* Навігація*/
 nav ul {
     list-style: none;
     padding: 0;
@@ -45,7 +45,7 @@ nav a {
     transition: all 0.3s ease;
 }
 
-/* Эффект при наведении на кнопки меню (кроваво-красный акцент) */
+/* червоні кнопки при наведенні */
 nav a:hover {
     color: #b79043;
     border: 1px solid #8b0000; 
@@ -53,14 +53,14 @@ nav a:hover {
     border-radius: 4px;
 }
 
-/* Основной контент */
+/* головне */
 main {
     max-width: 800px;
     margin: 40px auto;
     padding: 0 20px;
 }
 
-/* Стилизация секций ("панелей" квестов) */
+/* Стиль секцій */
 .panel {
     background-color: #1a1718;
     border: 1px solid #332b26;
@@ -78,14 +78,14 @@ h2 {
     margin-top: 0;
 }
 
-/* Блок "Про мене" (досье) */
+/* Про мене */
 .character-info {
     display: flex;
     align-items: center;
     gap: 25px;
 }
 
-/* Настройки твоей аватарки */
+/* ава */
 .avatar {
     width: 150px;
     height: 150px;
@@ -95,7 +95,7 @@ h2 {
     box-shadow: 0 0 15px rgba(183, 144, 67, 0.3);
 }
 
-/* Списки заданий (квесты) */
+/* завадння */
 ul {
     list-style-type: square;
     color: #b79043;
@@ -137,9 +137,7 @@ footer a:hover {
 
 
 
-/* =========================================
-   СТИЛІ ДЛЯ ТАБЛИЦІ (СТРУКТУРА ДУІКТ + RPG)
-   ========================================= */
+/* таблия розкладу */
 
 .schedule-table {
     width: 100%;
@@ -148,10 +146,9 @@ footer a:hover {
     color: #e0d5c1;
     font-family: "Georgia", serif;
     box-shadow: 0 5px 15px rgba(0,0,0,0.6);
-    font-size: 0.9em; /* Трохи зменшив шрифт, бо колонок багато */
+    font-size: 0.9em; 
 }
 
-/* Рамки та вирівнювання по центру (як на сайті) */
 .schedule-table th, .schedule-table td {
     border: 1px solid #332b26;
     padding: 8px;
@@ -159,7 +156,7 @@ footer a:hover {
     vertical-align: middle;
 }
 
-/* Шапка таблиці (заголовки колонок) */
+/* шапка таблиці  */
 .schedule-table th {
     background-color: #8b0000;
     color: #b79043;
@@ -168,7 +165,7 @@ footer a:hover {
     border-bottom: 2px solid #b79043;
 }
 
-/* Виділення колонки з днями тижня (зліва) */
+/* колонки з днями тижня */
 .day-col {
     background-color: rgba(139, 0, 0, 0.15);
     color: #b79043;
@@ -177,13 +174,13 @@ footer a:hover {
     letter-spacing: 2px;
 }
 
-/* Ефект при наведенні мишки */
+/* ефект при наведенні */
 .schedule-table tr:hover td {
     background-color: rgba(183, 144, 67, 0.1);
     cursor: default;
 }
 
-/* Стилі для тексту всередині клітинок */
+/* стиль для тексту  */
 .subj { font-weight: bold; color: #e0d5c1; margin-bottom: 3px; }
 .room { color: #b79043; font-size: 0.85em; margin-bottom: 3px; }
 .teach { font-style: italic; color: #a39581; font-size: 0.85em; }
