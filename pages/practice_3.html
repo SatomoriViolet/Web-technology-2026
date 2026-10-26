@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube FlexBox Clone — Практична №3</title>
+    <link rel="stylesheet" href="../css/youtube.css">
+</head>
+<body>
+
+    <header class="yt-header">
+        <div class="header-left">
+            <button class="icon-btn">☰</button>
+            <a href="../index.html" class="logo">
+                <span class="yt-icon">▶</span>
+                <span class="yt-logo-text">YouTube</span>
+                <span class="country-code">UA</span>
+            </a>
+        </div>
+
+        <div class="header-center">
+            <div class="search-box">
+                <input type="text" placeholder="Пошук">
+                <button class="search-btn">🔍</button>
+            </div>
+            <button class="voice-btn">🎤</button>
+        </div>
+
+        <div class="header-right">
+            <button class="icon-btn">+ Створити</button>
+            <button class="icon-btn">🔔</button>
+            <div class="user-avatar">М</div>
+        </div>
+    </header>
+
+
+    <div class="yt-container">
+ 
+        <aside class="yt-sidebar">
+            <nav class="sidebar-section">
+                <a href="#" class="sidebar-item active">🏠 Головна</a>
+                <a href="#" class="sidebar-item">⚡ YouTube Shorts</a>
+                <a href="#" class="sidebar-item">📺 Підписки</a>
+                <a href="#" class="sidebar-item">🎵 YouTube Music</a>
+            </nav>
+            <hr class="sidebar-divider">
+            <nav class="sidebar-section">
+                <div class="section-title">Ви &gt;</div>
+                <a href="#" class="sidebar-item">👤 Ваш канал</a>
+                <a href="#" class="sidebar-item">🕒 Історія</a>
+                <a href="#" class="sidebar-item">📹 Ваші відео</a>
+                <a href="#" class="sidebar-item">⏳ Переглянути пізніше</a>
+                <a href="#" class="sidebar-item">⬇️ Завантаження</a>
+                <a href="#" class="sidebar-item">⌄ Показати більше</a>
+            </nav>
+            <hr class="sidebar-divider">
+            <nav class="sidebar-section">
+                <div class="section-title">Підписки</div>
+                <a href="#" class="sidebar-item"><span class="channel-dot"></span> WAS: Популярна історія</a>
+                <a href="#" class="sidebar-item"><span class="channel-dot"></span> TheDRZJ</a>
+                <a href="#" class="sidebar-item"><span class="channel-dot"></span> ROZETKA</a>
+                <a href="#" class="sidebar-item"><span class="channel-dot"></span> Хащі</a>
+                <a href="#" class="sidebar-item"><span class="channel-dot"></span> Клятий раціоналіст</a>
+            </nav>
+        </aside>
+
+        <main class="yt-main">
+          
+            <div class="tags-bar">
+                <button class="tag-btn active">Усі</button>
+                <button class="tag-btn">Ігри</button>
+                <button class="tag-btn">Музика</button>
+                <button class="tag-btn">Пряма трансляція</button>
+                <button class="tag-btn">Новини</button>
+                <button class="tag-btn">Пригодницький бойовик</button>
+                <button class="tag-btn">Образотворче мистецтво</button>
+                <button class="tag-btn">Мультфільми</button>
+                <button class="tag-btn">Нещодавні завантаження</button>
+            </div>
+
+       
+            <div class="video-grid">
+                <!-- Відео 1 -->
+                <div class="video-card">
+                    <div class="thumbnail-wrapper">
+                        <div class="thumbnail bg-1">
+                            <span class="video-time">32:08</span>
+                        </div>
+                    </div>
+                    <div class="video-details">
+                        <div class="channel-avatar">RT</div>
+                        <div class="video-text">
+                            <h3 class="video-title">Какие овощи выращивали предки? // Дробышевский</h3>
+                            <p class="channel-name">RTVI Развлечения</p>
+                            <p class="video-metadata">276 тис. переглядів • 11 місяців тому</p>
+                        </div>
+                    </div>
+                </div>
+
+              
+                <div class="video-card">
+                    <div class="thumbnail-wrapper">
+                        <div class="thumbnail bg-2">
+                            <span class="video-time">26:47</span>
+                        </div>
+                    </div>
+                    <div class="video-details">
+                        <div class="channel-avatar">AD</div>
+                        <div class="video-text">
+                            <h3 class="video-title">How to Get Stuff Done When You Have ADHD</h3>
+                            <p class="channel-name">How to ADHD</p>
+                            <p class="video-metadata">1,2 млн переглядів • 7 років тому</p>
+                        </div>
+                    </div>
+                </div>
+
+            
+                <div class="video-card">
+                    <div class="thumbnail-wrapper">
+                        <div class="thumbnail bg-3">
+                            <span class="video-time">4:46</span>
+                        </div>
+                    </div>
+                    <div class="video-details">
+                        <div class="channel-avatar">ЕП</div>
+                        <div class="video-text">
+                            <h3 class="video-title">Як збільшився борг України за час великої війни? | Економічна правда</h3>
+                            <p class="channel-name">Економічна правда</p>
+                            <p class="video-metadata">78 тис. переглядів • 1 місяць тому</p>
+                        </div>
+                    </div>
+                </div>
+
+          
+                <div class="video-card">
+                    <div class="thumbnail-wrapper">
+                        <div class="thumbnail bg-4">
+                            <span class="video-time">23:59</span>
+                        </div>
+                    </div>
+                    <div class="video-details">
+                        <div class="channel-avatar">LK</div>
+                        <div class="video-text">
+                            <h3 class="video-title">Що Бісить Журналістку | Марія Малевська</h3>
+                            <p class="channel-name">LUKI</p>
+                            <p class="video-metadata">70 тис. переглядів • 4 місяці тому</p>
+                        </div>
+                    </div>
+                </div>
+
+              
+                <div class="video-card">
+                    <div class="thumbnail-wrapper">
+                        <div class="thumbnail bg-5">
+                            <span class="video-time">30:18</span>
+                        </div>
+                    </div>
+                    <div class="video-details">
+                        <div class="channel-avatar">BI</div>
+                        <div class="video-text">
+                            <h3 class="video-title">«Це твоя лопата, копатимеш собі яму»: знайдено росіян, які...</h3>
+                            <p class="channel-name">BIHUS Info</p>
+                            <p class="video-metadata">90 тис. переглядів • 1 день тому</p>
+                        </div>
+                    </div>
+                </div>
+
+       
+                <div class="video-card">
+                    <div class="thumbnail-wrapper">
+                        <div class="thumbnail bg-6">
+                            <span class="video-time">20:19</span>
+                        </div>
+                    </div>
+                    <div class="video-details">
+                        <div class="channel-avatar">HL</div>
+                        <div class="video-text">
+                            <h3 class="video-title">Neo-Brutalism: The Rising Design Trend in UI/UX</h3>
+                            <p class="channel-name">Halo Lab</p>
+                            <p class="video-metadata">242 перегляди • 1 день тому</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

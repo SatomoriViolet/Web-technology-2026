@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практична робота №4 - Fullsize Keyboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #2c3038;
+            font-family: 'Share Tech Mono', 'Inter', monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 15px;
+            min-height: 100vh;
+        }
+
+        .back-nav {
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 1080px;
+        }
+
+        .back-nav a {
+            text-decoration: none;
+            color: #abb2bf;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .back-nav a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .keyboard-case {
+            background: linear-gradient(180deg, #b8b8b8 0%, #a4a4a4 100%);
+            border: 4px solid #8f8f8f;
+            border-radius: 22px;
+            padding: 22px;
+            box-shadow: 
+                0 18px 30px rgba(0,0,0,0.55),
+                inset 0 2px 4px rgba(255,255,255,0.7),
+                inset 0 -3px 6px rgba(0,0,0,0.4);
+            display: flex;
+            gap: 18px;
+            user-select: none;
+        }
+
+      
+        .key {
+            background: linear-gradient(180deg, #ffffff 0%, #ebebeb 85%, #d9d9d9 100%);
+            border: 1px solid #b5b5b5;
+            border-radius: 5px;
+            box-shadow: 
+                0 4px 0 #9e9e9e,
+                0 5px 3px rgba(0,0,0,0.35),
+                inset 0 1px 1px #fff;
+            color: #222;
+            font-size: 13px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.08s ease;
+            height: 42px;
+            padding: 2px 4px;
+        }
+
+    
+        .key:hover {
+            background: linear-gradient(180deg, #f7f7f7 0%, #dfdfdf 100%);
+            border-color: #888;
+        }
+
+     
+        .key:active {
+            transform: translateY(3px);
+            box-shadow: 
+                0 1px 0 #777,
+                0 2px 2px rgba(0,0,0,0.3),
+                inset 0 2px 3px rgba(0,0,0,0.15);
+            background: #d8d8d8;
+        }
+
+   
+        .key.sub {
+            flex-direction: column;
+            justify-content: center;
+            font-size: 11px;
+            line-height: 1.1;
+        }
+
+        .key-esc { width: 44px; }
+        .f-spacer { width: 14px; }
+
+      
+        .main-block {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+   
+        .f-row {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+        }
+
+        .f-group {
+            display: flex;
+            gap: 4px;
+        }
+
+        .f-group .key {
+            width: 38px;
+            height: 34px;
+            font-size: 11px;
+        }
+
+    
+        .alpha-grid {
+            display: grid;
+            grid-template-columns: repeat(60, 1fr);
+            gap: 5px;
+            width: 630px;
+        }
+
+      
+        .k-1 { grid-column: span 4; }
+        .k-1-5 { grid-column: span 6; }
+        .k-1-75 { grid-column: span 7; }
+        .k-2 { grid-column: span 8; }
+        .k-2-25 { grid-column: span 9; }
+        .k-2-75 { grid-column: span 11; }
+        .k-space { grid-column: span 25; }
+
+     
+        .key-enter {
+            grid-column: span 9;
+            background: #f0f0f0;
+        }
+
+     
+        .nav-block {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 130px;
+        }
+
+        .nav-top-keys {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4px;
+        }
+
+        .nav-top-keys .key {
+            height: 34px;
+            font-size: 10px;
+        }
+
+        .nav-mid-keys {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+            margin-top: 12px;
+        }
+
+        .nav-arrows {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 42px);
+            gap: 5px;
+            margin-top: auto;
+        }
+
+        .arrow-up {
+            grid-column: 2;
+            grid-row: 1;
+        }
+        .arrow-left {
+            grid-column: 1;
+            grid-row: 2;
+        }
+        .arrow-down {
+            grid-column: 2;
+            grid-row: 2;
+        }
+        .arrow-right {
+            grid-column: 3;
+            grid-row: 2;
+        }
+
+       
+        .numpad-block {
+            display: flex;
+            flex-direction: column;
+            width: 175px;
+            gap: 12px;
+        }
+
+       
+        .led-panel {
+            display: flex;
+            justify-content: space-around;
+            padding: 6px 10px;
+            background: #9a9a9a;
+            border-radius: 6px;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+            height: 34px;
+            align-items: center;
+        }
+
+        .led-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 9px;
+            font-weight: bold;
+            color: #333;
+            gap: 3px;
+        }
+
+        .led-light {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #444;
+            box-shadow: 0 0 1px #000;
+        }
+
+        .led-light.active {
+            background: #39ff14;
+            box-shadow: 0 0 6px #39ff14;
+        }
+
+     
+        .numpad-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
+        }
+
+        .num-tall {
+            grid-row: span 2;
+            height: 89px;
+        }
+
+        .num-wide {
+            grid-column: span 2;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="back-nav">
+        <a href="../index.html">← Повернутися на головну</a>
+    </nav>
+
+   
+    <div class="keyboard-case">
+        
+       
+        <div class="main-block">
+            <!-- Ряд Esc та F1-F12 -->
+            <div class="f-row">
+                <button class="key key-esc">Esc</button>
+                <div class="f-spacer"></div>
+                <div class="f-group">
+                    <button class="key">F1</button>
+                    <button class="key">F2</button>
+                    <button class="key">F3</button>
+                    <button class="key">F4</button>
+                </div>
+                <div class="f-spacer"></div>
+                <div class="f-group">
+                    <button class="key">F5</button>
+                    <button class="key">F6</button>
+                    <button class="key">F7</button>
+                    <button class="key">F8</button>
+                </div>
+                <div class="f-spacer"></div>
+                <div class="f-group">
+                    <button class="key">F9</button>
+                    <button class="key">F10</button>
+                    <button class="key">F11</button>
+                    <button class="key">F12</button>
+                </div>
+            </div>
+
+     
+            <div class="alpha-grid">
+          
+                <button class="key k-1 sub">~<span>`</span></button>
+                <button class="key k-1 sub">!<span>1</span></button>
+                <button class="key k-1 sub">@<span>2</span></button>
+                <button class="key k-1 sub">#<span>3</span></button>
+                <button class="key k-1 sub">$<span>4</span></button>
+                <button class="key k-1 sub">%<span>5</span></button>
+                <button class="key k-1 sub">^<span>6</span></button>
+                <button class="key k-1 sub">&<span>7</span></button>
+                <button class="key k-1 sub">*<span>8</span></button>
+                <button class="key k-1 sub">(<span>9</span></button>
+                <button class="key k-1 sub">)<span>0</span></button>
+                <button class="key k-1 sub">_<span>-</span></button>
+                <button class="key k-1 sub">+<span>=</span></button>
+                <button class="key k-2">← Back</button>
+
+          
+                <button class="key k-1-5">Tab ⇥</button>
+                <button class="key k-1">Q</button>
+                <button class="key k-1">W</button>
+                <button class="key k-1">E</button>
+                <button class="key k-1">R</button>
+                <button class="key k-1">T</button>
+                <button class="key k-1">Y</button>
+                <button class="key k-1">U</button>
+                <button class="key k-1">I</button>
+                <button class="key k-1">O</button>
+                <button class="key k-1">P</button>
+                <button class="key k-1">{ [</button>
+                <button class="key k-1">} ]</button>
+                <button class="key k-1-5">| \</button>
+
+             
+                <button class="key k-1-75">Caps</button>
+                <button class="key k-1">A</button>
+                <button class="key k-1">S</button>
+                <button class="key k-1">D</button>
+                <button class="key k-1">F</button>
+                <button class="key k-1">G</button>
+                <button class="key k-1">H</button>
+                <button class="key k-1">J</button>
+                <button class="key k-1">K</button>
+                <button class="key k-1">L</button>
+                <button class="key k-1">: ;</button>
+                <button class="key k-1">" '</button>
+                <button class="key key-enter">Enter ↵</button>
+
+                <button class="key k-2-25">Shift ⇧</button>
+                <button class="key k-1">Z</button>
+                <button class="key k-1">X</button>
+                <button class="key k-1">C</button>
+                <button class="key k-1">V</button>
+                <button class="key k-1">B</button>
+                <button class="key k-1">N</button>
+                <button class="key k-1">M</button>
+                <button class="key k-1">&lt; ,</button>
+                <button class="key k-1">&gt; .</button>
+                <button class="key k-1">? /</button>
+                <button class="key k-2-75">Shift ⇧</button>
+
+                <button class="key k-1-5">Ctrl</button>
+                <button class="key k-1-5">Win ❖</button>
+                <button class="key k-1-5">Alt</button>
+                <button class="key k-space"></button>
+                <button class="key k-1-5">AltGr</button>
+                <button class="key k-1-5">Win ❖</button>
+                <button class="key k-1-5">Menu ▤</button>
+                <button class="key k-1-5">Ctrl</button>
+            </div>
+        </div>
+
+       
+        <div class="nav-block">
+            <div class="nav-top-keys">
+                <button class="key">PrtSc<br>SysRq</button>
+                <button class="key">Scroll<br>Lock</button>
+                <button class="key">Pause<br>Break</button>
+            </div>
+            <div class="nav-mid-keys">
+                <button class="key">Ins</button>
+                <button class="key">Home</button>
+                <button class="key">PgUp</button>
+                <button class="key">Del</button>
+                <button class="key">End</button>
+                <button class="key">PgDn</button>
+            </div>
+            <div class="nav-arrows">
+                <button class="key arrow-up">▲</button>
+                <button class="key arrow-left">◀</button>
+                <button class="key arrow-down">▼</button>
+                <button class="key arrow-right">▶</button>
+            </div>
+        </div>
+
+        
+        <div class="numpad-block">
+            <div class="led-panel">
+                <div class="led-item">
+                    <span>1</span>
+                    <div class="led-light active"></div>
+                </div>
+                <div class="led-item">
+                    <span>A</span>
+                    <div class="led-light"></div>
+                </div>
+                <div class="led-item">
+                    <span>↓</span>
+                    <div class="led-light"></div>
+                </div>
+            </div>
+
+            <div class="numpad-grid">
+                <button class="key">Num<br>Lock</button>
+                <button class="key">/</button>
+                <button class="key">*</button>
+                <button class="key">-</button>
+
+                <button class="key sub">7<span>Home</span></button>
+                <button class="key sub">8<span>▲</span></button>
+                <button class="key sub">9<span>PgUp</span></button>
+                <button class="key num-tall">+</button>
+
+                <button class="key sub">4<span>◀</span></button>
+                <button class="key">5</button>
+                <button class="key sub">6<span>▶</span></button>
+
+                <button class="key sub">1<span>End</span></button>
+                <button class="key sub">2<span>▼</span></button>
+                <button class="key sub">3<span>PgDn</span></button>
+                <button class="key num-tall">Enter</button>
+
+                <button class="key num-wide sub">0<span>Ins</span></button>
+                <button class="key sub">.<span>Del</span></button>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

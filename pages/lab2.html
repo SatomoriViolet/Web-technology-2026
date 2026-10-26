@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота №2 - CSS Selectors</title>
+  
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+
+        li:first-child {
+            font-weight: bold;
+        }
+
+
+        a:last-child {
+            color: red;
+        }
+
+    
+        input:disabled {
+            background-color: gray;
+        }
+
+        div > p {
+            font-weight: bold;
+        }
+
+     
+        [href^="https"] {
+            color: green;
+        }
+
+     
+        input[type="text"] {
+            border: 1px solid blue;
+        }
+
+        li:first-child,
+        li:last-child {
+            font-size: 24px;
+        }
+
+   
+        div p {
+            font-size: 16px;
+        }
+
+      
+        input:checked {
+            background-color: lightblue;
+            accent-color: lightblue;
+        }
+
+      
+        li > a {
+            text-decoration: underline;
+        }
+
+    
+        li:nth-child(even) {
+            font-weight: bold;
+        }
+
+        
+        input[type="text"]:not(:disabled) {
+            background-color: lightgray;
+        }
+
+        
+        p:first-child {
+            font-size: 24px;
+        }
+
+        li.special + li {
+            text-decoration: line-through;
+        }
+
+        p::first-letter {
+            font-size: 36px;
+        }
+
+       
+        a::after {
+            content: " ↗";
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Лабораторна робота №2</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Повернутися на Головну</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="panel">
+          
+            <nav>
+                <a href="https://example.com">Головна</a>
+                <a href="http://example.com/about">Про нас</a>
+                <a href="https://example.com/services">Послуги</a>
+                <a href="http://example.com/contact">Контакти</a>
+            </nav>
+
+            <h1>CSS Selectors Challenge</h1>
+            <p>Це абзац тексту.</p>
+
+            <ul>
+                <li>Перший пункт списку</li>
+                <li class="special">Другий пункт списку</li>
+                <li>Третій пункт списку</li>
+            </ul>
+
+            <div>
+                <p>Цей абзац знаходиться в коробці.</p>
+            </div>
+
+            <form>
+                <label>Поле введення 1: <input type="text"></label><br>
+                <label>Поле введення 2: <input type="text" disabled></label><br>
+                <label>Email: <input type="email"></label><br>
+                <label>Поле введення 3: <input type="text"></label><br>
+                <label>Чекбокс 1: <input type="checkbox" checked></label><br>
+                <label>Чекбокс 2: <input type="checkbox"></label><br>
+            </form>
+
+            <section>
+                <h2>Додатковий розділ</h2>
+                <p>Це ще один абзац тексту в іншому розділі.</p>
+                <ul>
+                    <li><a href="https://example.com/sub1">Перший пункт списку</a></li>
+                    <li><a href="http://example.com/sub2">Другий пункт списку</a></li>
+                </ul>
+            </section>
+
+            <footer>
+                <p>&copy; 2023 Ваша компанія. Усі права захищені.</p>
+                <a href="#top">Home</a>
+            </footer>
+        </section>
+    </main>
+</body>
+</html>
